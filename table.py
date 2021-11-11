@@ -30,9 +30,8 @@ class Talk(Base):
     conference_id = Column(Integer, ForeignKey('conference.id'))
     speakers = relationship("Speaker", backref="speaker_for")
     participants = relationship("Participant", backref="participant_for")
-    # conf = relationship("Conf", backref=backref('talk'))
 
-
+	
 class Speaker(Base):
     __tablename__ = 'speaker'
 
@@ -40,7 +39,6 @@ class Speaker(Base):
     username = Column(String)
     email = Column(String)
     talk_id = Column(Integer, ForeignKey('talk.id'))
-    # speakerof = relationship("Speakerof", backref=backref('speaker'))
 
 
 class Participant(Base):
@@ -50,10 +48,3 @@ class Participant(Base):
     username = Column(String)
     email = Column(String)
     talk_id = Column(Integer, ForeignKey('talk.id'))
-    # participantof = relationship("Participantof", backref=backref('participant'))
-
-
-
-
-
-
