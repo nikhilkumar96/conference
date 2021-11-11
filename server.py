@@ -4,10 +4,6 @@ from table import Base
 import api_v1
 from sqlalchemy import create_engine, inspect
 from sqlalchemy.orm import sessionmaker
-import sys
-
-sys.setrecursionlimit(10000)
-
 
 app = Sanic(SERVICENAME)
 engine = create_engine(DB_CONN_URI, echo=True)
